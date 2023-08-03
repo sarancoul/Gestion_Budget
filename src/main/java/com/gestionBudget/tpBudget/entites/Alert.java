@@ -11,6 +11,6 @@ public class Alert {
     @ManyToOne
     private Utilisateur utilisateurAlert;
 
-    @OneToOne(mappedBy = "")
+    @OneToOne(mappedBy = "B")
     private Budget budgetAlert;
 }
