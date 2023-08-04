@@ -45,9 +45,12 @@ public class Utilisateur {
     private List<Alert> alertUser;
 
     @OneToMany(mappedBy = "")
-    private List<CategorieDepense> CategorieDepenseUser;
+    private List<Categorie> CategorieUser;
 
     @OneToMany(mappedBy = "")
     private List<Budget> BudgetUser;
+
+    @OneToMany(mappedBy = "")
+    private List<TypeDepense> typeDepenses;
 
 }
