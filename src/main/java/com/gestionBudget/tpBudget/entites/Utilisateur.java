@@ -43,13 +43,13 @@ public class Utilisateur {
     @OneToMany(mappedBy = "utilisateurAlert")
     private List<Alert> alertUser;
 
-    @OneToMany(mappedBy = "")
+    @OneToMany(mappedBy = "utilisateurCategorie")
     private List<Categorie> CategorieUser;
 
     @OneToMany(mappedBy = "utilisateurBudget")
     private List<Budget> BudgetUser;
 
-    @OneToMany(mappedBy = "")
+    @OneToMany(mappedBy = "utilisateurType")
     private List<TypeDepense> typeDepenses;
 
 }
