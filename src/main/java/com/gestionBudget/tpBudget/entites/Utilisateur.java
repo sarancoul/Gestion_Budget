@@ -23,7 +23,7 @@ public class Utilisateur {
     private String nom;
 
     @Column(name = "prenom")
-    @NotNull(message = "Remplissez les champs vides")
+    @NotNull(message = "Remplisser les champs vides")
     @Size(max = 50, message = "Texte trop long")
     private String prenom;
 
