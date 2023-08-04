@@ -7,7 +7,6 @@ import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.util.List;
 
 @Entity
@@ -38,16 +37,16 @@ public class Utilisateur {
     @Size(max = 20, message = "Texte trop long")
     private String motDePasse;
 
-    @OneToMany(mappedBy = "")
+    @OneToMany(mappedBy = "utilisateurDepense")
     private List<Depense> depensesUser;
 
-    @OneToMany(mappedBy = "")
+    @OneToMany(mappedBy = "utilisateurAlert")
     private List<Alert> alertUser;
 
     @OneToMany(mappedBy = "")
     private List<Categorie> CategorieUser;
 
-    @OneToMany(mappedBy = "")
+    @OneToMany(mappedBy = "utilisateurBudget")
     private List<Budget> BudgetUser;
 
     @OneToMany(mappedBy = "")

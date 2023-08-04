@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data @AllArgsConstructor @NoArgsConstructor
 public class TypeDepense {
@@ -16,7 +18,13 @@ public class TypeDepense {
 
     @Column(name = "nomTypeDepense")
     @NotNull(message = "Remplissez les champs vides")
-    @Size(max = 20, message = "Texte trop long")
+    @Size(max = 50, message = "Texte trop long")
     private String nomTypeDepense;
+
+    @ManyToOne
+    private Utilisateur utilisateurType;
+
+    @OneToMany(mappedBy = "typeDepense")
+    private List<Depense> depensesType;
 
 }
