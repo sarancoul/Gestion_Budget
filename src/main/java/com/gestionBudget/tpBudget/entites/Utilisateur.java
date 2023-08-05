@@ -47,7 +47,7 @@ public class Utilisateur {
     private List<Alert> alertUser;
 
     @OneToMany(mappedBy = "utilisateurCategorie")
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)      // Json pour gerer l'affichage
     private List<Categorie> CategorieUser;
 
     @OneToMany(mappedBy = "utilisateurBudget")
