@@ -1,5 +1,6 @@
 package com.gestionBudget.tpBudget.entites;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
@@ -38,18 +39,23 @@ public class Utilisateur {
     private String motDePasse;
 
     @OneToMany(mappedBy = "utilisateurDepense")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Depense> depensesUser;
 
     @OneToMany(mappedBy = "utilisateurAlert")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Alert> alertUser;
 
     @OneToMany(mappedBy = "utilisateurCategorie")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Categorie> CategorieUser;
 
     @OneToMany(mappedBy = "utilisateurBudget")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Budget> BudgetUser;
 
     @OneToMany(mappedBy = "utilisateurType")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<TypeDepense> typeDepenses;
 
 }
