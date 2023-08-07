@@ -19,7 +19,7 @@ public class Depense {
 
     @Column(name = "montant")
     @NotNull(message = "Remplissez les champs vides")
-    @Max(value = 100, message = "Montant trop eleve")
+   // @Max(value = 100, message = "Montant trop eleve")
     private int montant;
 
     @Column(name = "description")

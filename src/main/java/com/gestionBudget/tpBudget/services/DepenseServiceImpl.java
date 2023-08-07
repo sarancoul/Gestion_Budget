@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -24,15 +25,15 @@ public class DepenseServiceImpl implements IDepenseService {
     }
 
     @Override
-    public Depense modifier(int idDepense, Depense depense) {
-        return repositoryDepense.findById((long) idDepense)
+    public Optional<Depense> modiffier(Long idDepense, Depense depense) {
+        return repositoryDepense.findById(idDepense)
                 .map(s->{
                     s.setMontant(depense.getMontant());
                     s.setDescription(depense.getDescription());
                     s.setDateDebutDepense(depense.getDateDebutDepense());
                     s.setDateFinDepense(depense.getDateFinDepense());
                     return repositoryDepense.save(s);
-                }).orElseThrow(()->new RuntimeException("Depense non trouvé !"));
+                });
     }
 
     @Override
