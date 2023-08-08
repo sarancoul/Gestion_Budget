@@ -7,7 +7,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class AlertServiceImpl implements IAlertService {
+public class
+AlertServiceImpl implements IAlertService {
 
     private RepositoryAlert repositoryAlert;
 
