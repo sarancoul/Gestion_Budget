@@ -8,6 +8,7 @@ public class TpBudgetApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TpBudgetApplication.class, args);
+		System.out.println("Hello world");
 	}
 
 

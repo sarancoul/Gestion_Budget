@@ -6,9 +6,10 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/depence")
+@RequestMapping("/depense")
 @AllArgsConstructor
 public class DepenseController {
 
@@ -24,9 +25,10 @@ public class DepenseController {
     public List<Depense> read(){
         return depenseService.lire();
     }
+
     @PutMapping("/modiffier/{idDepense}")
-    public Depense modiffier(@PathVariable int idDepense,@RequestBody Depense depense){
-        return depenseService.modifier(idDepense,depense);
+    public Optional<Depense> modiffier(@PathVariable Long idDepense, @RequestBody Depense depense){
+        return depenseService.modiffier(idDepense,depense);
     }
 
     @DeleteMapping("/supprimer/{idDepense}")
