@@ -19,7 +19,7 @@ import java.util.List;
 public class Budget {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idBudget;
 
     @Column(name = "titre")
     @NotNull(message = "Remplisser les champs vides")

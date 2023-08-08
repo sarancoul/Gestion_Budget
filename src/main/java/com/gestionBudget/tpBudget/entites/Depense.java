@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -29,11 +30,7 @@ public class Depense {
 
     @Column(name = "dateDebutDepense")
     @NotNull(message = "Remplissez les champs vides")
-    private String dateDebutDepense;
-
-    @Column(name = "dateFinDepense")
-    @NotNull(message = "Remplissez les champs vides")
-    private String dateFinDepense;
+    private LocalDate date;
 
     @ManyToOne
     private Utilisateur utilisateurDepense;

@@ -15,7 +15,7 @@ import java.util.List;
 @Table(name = "utilisateur")
 public class Utilisateur {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idUser;
 
     @Column(name = "nom")
     @NotNull(message = "Remplissez les champs vides")
