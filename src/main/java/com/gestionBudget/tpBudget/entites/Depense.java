@@ -28,7 +28,7 @@ public class Depense {
     @Size(max = 100, message = "Texte trop long")
     private String description;
 
-    @Column(name = "dateDebutDepense")
+    @Column(name = "date")
     @NotNull(message = "Remplissez les champs vides")
     private LocalDate date;
 

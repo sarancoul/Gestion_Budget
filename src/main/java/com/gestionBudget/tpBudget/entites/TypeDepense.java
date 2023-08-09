@@ -1,5 +1,6 @@
 package com.gestionBudget.tpBudget.entites;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -22,9 +23,11 @@ public class TypeDepense {
     private String nomTypeDepense;
 
     @ManyToOne
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Utilisateur utilisateurType;
 
     @OneToMany(mappedBy = "typeDepense")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Depense> depensesType;
 
 }

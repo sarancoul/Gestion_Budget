@@ -1,6 +1,7 @@
 package com.gestionBudget.tpBudget.services;
 
 import com.gestionBudget.tpBudget.entites.Utilisateur;
+import com.gestionBudget.tpBudget.exception.NotFoundException;
 import com.gestionBudget.tpBudget.repository.RepositoryUtilisateur;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
@@ -21,7 +22,7 @@ public class UtilisateurServiceImpl implements IUtilisateurService {
             repositoryUtilisateur.save(utilisateur);
             return "Utilisateur inscrire !";
         }else {
-            return "Utilisateur existe deja !";
+            throw new NotFoundException("User existe deja !");
         }
     }
 

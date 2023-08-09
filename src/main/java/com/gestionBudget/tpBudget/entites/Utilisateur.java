@@ -51,7 +51,7 @@ public class Utilisateur {
     private List<Categorie> CategorieUser;
 
     @OneToMany(mappedBy = "utilisateurBudget")
-//    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Budget> BudgetUser;
 
     @OneToMany(mappedBy = "utilisateurType")

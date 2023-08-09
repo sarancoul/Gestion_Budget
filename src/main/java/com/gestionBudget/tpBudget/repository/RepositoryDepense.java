@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.time.LocalDate;
 
 public interface RepositoryDepense extends JpaRepository<Depense,Long> {
+//    rechercher l'utilisateur courant
     Depense findByUtilisateurDepenseAndTypeDepenseAndDateAndBudgetDepense(Utilisateur utilisateur, TypeDepense typeDepense, LocalDate date, Budget budget);
     Depense findFirstByUtilisateurDepenseAndTypeDepenseAndBudgetDepenseOrderByDateDesc(Utilisateur utilisateur, TypeDepense typeDepense, Budget budget);
 

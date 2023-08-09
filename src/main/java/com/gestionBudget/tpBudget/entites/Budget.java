@@ -31,6 +31,11 @@ public class Budget {
     @Min(value = 100, message = "Montant trop eleve")
     private int montant;
 
+    @Column(name = "MontantRestant")
+    @NotNull(message = "Remplissez les champs vides")
+    @Min(value = 100, message = "Montant trop eleve")
+    private int MontantRestant;
+
     @Column(name = "dateDebut")
     @NotNull(message = "Remplissez les champs vides")
     @Temporal(TemporalType.DATE)
@@ -50,7 +55,7 @@ public class Budget {
     private Utilisateur utilisateurBudget;
 
     @ManyToOne
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Categorie categorieBudget;
 
     @OneToMany(mappedBy = "budgetDepense")

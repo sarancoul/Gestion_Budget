@@ -1,6 +1,10 @@
 package com.gestionBudget.tpBudget.services;
 
 import com.gestionBudget.tpBudget.entites.Budget;
+import com.gestionBudget.tpBudget.entites.Categorie;
+import com.gestionBudget.tpBudget.entites.Depense;
+import com.gestionBudget.tpBudget.entites.Utilisateur;
+import com.gestionBudget.tpBudget.exception.NotFoundException;
 import com.gestionBudget.tpBudget.repository.RepositoryBudget;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
@@ -65,6 +69,23 @@ public class BudgetServiceImpl implements IBudgetService {
             repositoryBudget.deleteById(idBudget);
             return "Identifiant supprimer";
         }
+    }
+
+    @Override
+    public void montantReduit(Depense depense) {
+//        Pour recuperer le montant du depense
+        int montantDepense = depense.getMontant();
+        Budget budget = depense.getBudgetDepense();
+
+        if (montantDepense > budget.getMontantRestant()){
+            throw new NotFoundException("votre montant depense est trop eleve pour le budget !");
+        }
+        int montantRestant = budget.getMontantRestant() - montantDepense;
+        budget.setMontantRestant(montantRestant);
+
+        repositoryBudget.save(budget);
+
+
     }
 
 

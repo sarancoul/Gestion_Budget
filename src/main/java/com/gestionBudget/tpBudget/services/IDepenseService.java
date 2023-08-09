@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface IDepenseService {
 
-    String creer(Depense depense);
+    Depense creer(Depense depense);
 
     List<Depense> lire();
 
