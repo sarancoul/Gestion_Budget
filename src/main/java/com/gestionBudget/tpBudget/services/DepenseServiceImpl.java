@@ -75,8 +75,13 @@ public class DepenseServiceImpl implements IDepenseService {
 
     @Override
     public String supprimer(Long idDepense) {
+    Optional<Depense> depenseOptional = repositoryDepense.findById(idDepense);
+    if (depenseOptional.isPresent()){
         repositoryDepense.deleteById(idDepense);
-        return "Depense supprimer";
+        return "Depense supprimer avec succès";
+    }else {
+        return "La Depense avec L'ID "+ idDepense + " n'existe pas";
+    }
     }
 
 }
